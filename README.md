@@ -1,5 +1,7 @@
 **Simple Docker image for Kafka 1.0.0**
 
+Docker hub: [https://hub.docker.com/r/teivah/kafka](https://hub.docker.com/r/teivah/kafka) 
+
 Run the following command by replacing _<DOCKER_HOST>_ with your Docker host IP:
 ```bash
 docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=<DOCKER_HOST> --env ADVERTISED_PORT=9092 spotify/kafka
