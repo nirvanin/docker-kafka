@@ -14,11 +14,11 @@ Inside of your container, run the following commands:
 * To create a Kafka producer:
 
 ```bash
-/opt/kafka_2.11-0.10.1.0/bin/kafka-console-producer.sh --broker-list <DOCKER_HOST>:9092 --topic test
+/opt/kafka_2.11-1.0.0/bin/kafka-console-producer.sh --broker-list <DOCKER_HOST>:9092 --topic test
 ```
 
 * To create a Kafka consumer:
 
 ```bash
-/opt/kafka_2.11-0.10.1.0/bin/kafka-console-consumer.sh --zookeeper <DOCKER_HOST>:9092 --topic test
+/opt/kafka_2.11-1.0.0/bin/kafka-console-consumer.sh --zookeeper <DOCKER_HOST>:9092 --topic test
 ```
