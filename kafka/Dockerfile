@@ -1,9 +1,7 @@
-# Kafka and Zookeeper
-
 FROM java:openjdk-8-jre
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV SCALA_VERSION 2.11
+ENV SCALA_VERSION 2.12
 ENV KAFKA_VERSION 1.1.0
 ENV KAFKA_HOME /opt/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION"
 
@@ -17,10 +15,7 @@ RUN apt-get update && \
     rm /tmp/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION".tgz
 
 ADD scripts/start-kafka.sh /usr/bin/start-kafka.sh
-
 ADD scripts/confset.pl /usr/bin/confset.pl
-
-# Supervisor config
 ADD supervisor/kafka.conf supervisor/zookeeper.conf /etc/supervisor/conf.d/
 
 # 2181 is zookeeper, 9092 is kafka
