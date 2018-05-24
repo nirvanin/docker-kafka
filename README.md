@@ -2,8 +2,6 @@
 
 Lightweight Docker image packaging Kafka 1.1.0 and Zookeeper
 
-Docker hub: [https://hub.docker.com/r/teivah/kafka](https://hub.docker.com/r/teivah/kafka) 
-
 ## Run
 
 Run the following command by replacing <DOCKER_HOST> with your Docker host IP:
