@@ -1,25 +1,28 @@
-# Docker image for Kafka 1.1.0
+# Docker image for Kafka 2.0.0
 
-Lightweight Docker image packaging Kafka 1.1.0 and Zookeeper
+Lightweight Docker image packaging the execution of Kafka 2.0.0 and Zookeeper
 
 ## Run
 
-Run the following command by replacing <DOCKER_HOST> with your Docker host IP:
 ```bash
-docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=<DOCKER_HOST> --env ADVERTISED_PORT=9092 teivah/kafka
+docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_LISTENERS=PLAINTEXT://docker_host:9092 teivah/kafka:2.0.0
 ```
 
 Default ports:
 - 2181: Zookeeper
 - 9092: Kafka
 
-If you need to change the Kafka port, you must change the port mapping and the ADVERTISED_PORT.
-
 ## Environment variables
 
-- ADVERTISED_HOST: Hostname published to Zookeeper
-- ADVERTISED_PORT: Port published to Zookeeper
-- LOG_RETENTION_HOURS: Number of hours to keep a log file
-- LOG_RETENTION_BYTES: Maximum size of the log before deleting it
-- NUM_PARTITIONS: Default number of log partitions per topic
-- AUTO_CREATE_TOPICS: Enable auto creation of topics (default: true)
+The following Kafka options are configurable by passing an environment variable to the Docker container (```--env key=value```):
+
+- ```LOG_RETENTION_HOURS```: log.retention.hours 
+- ```LISTENERS```: listeners
+- ```ADVERTISED_LISTENERS```: advertised.listeners 
+- ```NUM_PARTITIONS```: num.partitions
+- ```LOG_FLUSH_INTERVAL_MESSAGES```: log.flush.interval.messages 
+- ```LOG_FLUSH_INTERVAL_MS```: log.flush.interval.messages
+- ```NUM_IO_THREADS```: num.io.threads
+- ```SOCKET_SEND_BUFFER_BYTES```: socket.send.buffer.bytes 
+- ```SOCKET_RECEIVE_BUFFER_BYTES```: socket.receive.buffer.bytes 
+- ```SOCKET_REQUEST_MAX_BYTES```: socket.request.max.bytes
