@@ -1,11 +1,11 @@
 # Docker image for Kafka 2.0.0
 
-Lightweight Docker image packaging the execution of Kafka 2.0.0 and Zookeeper
+Lightweight Docker image packaging the execution of Kafka 2.6.0 and Zookeeper
 
 ## Run
 
 ```bash
-docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_LISTENERS=PLAINTEXT://docker_host:9092 teivah/kafka:2.0.0
+docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_LISTENERS=PLAINTEXT://docker_host:9092 teivah/kafka:2.6.0
 ```
 
 Default ports:
