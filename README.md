@@ -1,4 +1,4 @@
-# Docker image for Kafka 2.0.0
+# Docker image for Kafka 2.6.0
 
 Lightweight Docker image packaging the execution of Kafka 2.6.0 and Zookeeper
 
